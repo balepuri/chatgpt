@@ -243,12 +243,12 @@
         <h2 class="headline">Klik Tombol Hijau Dibawah Ini</h2>
         <button class="button" onclick="redirectToURL()">GET IT NOW</button>
 
-        <!-- Second Section (With Large Space) -->
+        <!-- Second Section -->
         <h2 class="headline orange-text">Terima Kasih sudah menggunakan ChatGPT Prompts kita.</h2>
         <h2 class="headline orange-text">Kalo Anda Mau Akses 1000+ AI Tools untuk 1000x Mempercepat Pekerjaan Anda</h2>
         <h2 class="headline orange-text">Klik Tombol Oren Di Bawah Ini dan Tulis Code "MAUAITOOLSBALE"</h2>
 
-              <!-- Button to Reveal Code Entry -->
+        <!-- Button to Reveal Code Entry -->
         <button class="button" id="getItButton" style="background-color: orange;" onclick="showCodeInput()">GET IT</button>
 
         <!-- Code Entry Section (Hidden Initially) -->
@@ -263,6 +263,27 @@
         // Open the URL in a NEW tab when clicking "GET IT NOW"
         function redirectToURL() {
             window.open("https://forest-fluorine-960.notion.site/ChatGPT-32k-Prompts-Extra-12-000-Prompts-1981e5bbdd4a8099ab68cdca758ae43c?pvs=4", "_blank"); // Change to your actual URL
+        }
+
+        // When "GET IT" is clicked, hide it and show the code entry box in the SAME POSITION
+        function showCodeInput() {
+            document.getElementById("getItButton").style.display = "none"; // Hide GET IT button
+            document.getElementById("codeContainer").classList.remove("hidden"); // Show Code Input
+            document.getElementById("submitCodeBtn").style.display = "inline-block"; // Show Submit Button
+        }
+
+        // Validate the code and open the URL in the SAME page
+        function validateCode() {
+            let inputCode = document.getElementById("codeInput").value.trim().toLowerCase();
+            let correctCode = "mauaitoolsbale"; // Change to actual code
+            let errorMessage = document.getElementById("errorMessage");
+
+            if (inputCode === correctCode) {
+                window.location.href = "https://yourdestination.com"; // Change to correct destination URL
+            } else {
+                errorMessage.style.display = "block"; // Show error message
+            }
+        }
     </script>
 
 </body>
