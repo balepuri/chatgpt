@@ -66,46 +66,6 @@
             line-height: 1.5;
             margin-bottom: 10px;
         }
-
-        .hidden {
-            display: none;
-        }
-
-        .code-container {
-            margin-top: 20px;
-        }
-
-        .code-input {
-            padding: 10px;
-            font-size: 16px;
-            text-align: center;
-            width: 200px;
-            border: 2px solid #000;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        .submit-code-button {
-            background-color: blue;
-            color: white;
-            padding: 10px 15px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 14px;
-            display: none;
-        }
-
-        .orange-text {
-            color: orange;
-        }
     </style>
 </head>
 <body>
@@ -239,50 +199,15 @@
             <p>- Generating customer satisfaction reports</p>
         </div>
 
-        <!-- Button and Headline Under the First Text Box -->
+        <!-- Button Under the First Text Box -->
         <h2 class="headline" style="color: green;">Klik Tombol Hijau Dibawah Ini</h2>
         <button class="button" onclick="redirectToURL()">GET IT NOW</button>
-
-        <!-- Second Section -->
-        <h2 class="headline orange-text" style="color: red;">Terima Kasih sudah menggunakan ChatGPT Prompts kita.</h2>
-        <h2 class="headline orange-text" style="color: red;">Kalo Anda Mau Akses 1000+ AI Tools untuk 1000x Mempercepat Pekerjaan Anda</h2>
-        <h2 class="headline orange-text" style="color: red;">Klik Tombol Merah Di Bawah Ini dan Tulis Code "MAUAITOOLSBALE"</h2>
-
-        <!-- Button to Reveal Code Entry -->
-        <button class="button" id="getItButton" style="background-color: red;" onclick="showCodeInput()">GET IT</button>
-
-        <!-- Code Entry Section (Hidden Initially) -->
-        <div class="hidden" id="codeContainer">
-            <input type="text" id="codeInput" class="code-input" placeholder="Enter code here">
-            <button id="submitCodeBtn" class="submit-code-button" onclick="validateCode()">Submit</button>
-            <p id="errorMessage" class="error-message">Incorrect code. Please try again.</p>
-        </div>
     </div>
       
     <script>
         // Open the URL in a NEW tab when clicking "GET IT NOW"
         function redirectToURL() {
             window.open("https://forest-fluorine-960.notion.site/ChatGPT-32k-Prompts-Extra-12-000-Prompts-1981e5bbdd4a8099ab68cdca758ae43c?pvs=4", "_blank"); // Change to your actual URL
-        }
-
-        // When "GET IT" is clicked, hide it and show the code entry box in the SAME POSITION
-        function showCodeInput() {
-            document.getElementById("getItButton").style.display = "none"; // Hide GET IT button
-            document.getElementById("codeContainer").classList.remove("hidden"); // Show Code Input
-            document.getElementById("submitCodeBtn").style.display = "inline-block"; // Show Submit Button
-        }
-
-        // Validate the code and open the URL in the SAME page
-        function validateCode() {
-            let inputCode = document.getElementById("codeInput").value.trim().toLowerCase();
-            let correctCode = "mauaitoolsbale"; // Change to actual code
-            let errorMessage = document.getElementById("errorMessage");
-
-            if (inputCode === correctCode) {
-                window.location.href = "https://yourdestination.com"; // Change to correct destination URL
-            } else {
-                errorMessage.style.display = "block"; // Show error message
-            }
         }
     </script>
 
